@@ -30,7 +30,6 @@ dependencies {
 	compile group: 'org.reflections', name: 'reflections', version: '0.9.11'
 	testCompile('org.assertj:assertj-core:3.8.0')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-starter-mail')

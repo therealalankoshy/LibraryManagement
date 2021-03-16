@@ -9,10 +9,13 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Book extends AbstractEntity {
@@ -23,9 +26,22 @@ public class Book extends AbstractEntity {
 	@Fetch(FetchMode.SELECT)
 	@JoinTable(name = "book_author", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
 	private List<Author> authors;
-
+	
+//	@JsonManagedReference("book_copy")
+//	@OneToMany(cascade = CascadeType.ALL, mappedBy = "book")
+//	private List<BookCopy> copies;
+	
 	@OneToOne(fetch = FetchType.EAGER)
 	private BookCategory bookCategory;
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public String getName() {
 		return name;

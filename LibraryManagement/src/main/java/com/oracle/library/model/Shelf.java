@@ -1,8 +1,9 @@
 package com.oracle.library.model;
 
-import javax.persistence.OneToOne;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+@Entity
 public class Shelf extends AbstractEntity {
-	@OneToOne
+	@Column
 	private String sectionName;
 }

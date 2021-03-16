@@ -13,18 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.oracle.library.model.Book;
 import com.oracle.library.service.BookService;
 
-@Controller
+@RestController
 public class BookController {
 
 	@Autowired
 	private BookService bookService;
 
-	@RequestMapping("/index")
-	public String index() {
-		return "index";
-	}
-
-	@GetMapping("/api/view")
+	@GetMapping("api/books")
 	@PermitAll
 	public List<Book> findAllBooks() {
 		return bookService.findAllBooks();

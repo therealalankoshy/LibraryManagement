@@ -1,6 +1,7 @@
 package com.oracle.library.model;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -27,9 +28,10 @@ public class Book extends AbstractEntity {
 	@JoinTable(name = "book_author", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
 	private List<Author> authors;
 	
-//	@JsonManagedReference("book_copy")
-//	@OneToMany(cascade = CascadeType.ALL, mappedBy = "book")
-//	private List<BookCopy> copies;
+	@JsonManagedReference("book_copy")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "book")
+	private List<BookCopy> copies;
+	
 	
 	@OneToOne(fetch = FetchType.EAGER)
 	private BookCategory bookCategory;

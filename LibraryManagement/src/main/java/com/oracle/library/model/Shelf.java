@@ -6,4 +6,14 @@ import javax.persistence.Entity;
 public class Shelf extends AbstractEntity {
 	@Column
 	private String sectionName;
+	
+	
+
+	public String getSectionName() {
+		return sectionName;
+	}
+
+	public void setSectionName(String sectionName) {
+		this.sectionName = sectionName;
+	}
 }

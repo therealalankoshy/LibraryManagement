@@ -33,7 +33,7 @@ public class Book extends AbstractEntity {
 	private List<BookCopy> copies;
 	
 	
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	private BookCategory bookCategory;
 	
 	
@@ -67,6 +67,14 @@ public class Book extends AbstractEntity {
 
 	public void setBookCategory(BookCategory bookCategory) {
 		this.bookCategory = bookCategory;
+	}
+
+	public List<BookCopy> getCopies() {
+		return copies;
+	}
+
+	public void setCopies(List<BookCopy> copies) {
+		this.copies = copies;
 	}
 
 }

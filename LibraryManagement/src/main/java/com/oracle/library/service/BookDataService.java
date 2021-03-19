@@ -1,4 +1,4 @@
-package com.oracle.library.repository;
+package com.oracle.library.service;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import com.oracle.library.BookDataSpecification;
 import com.oracle.library.BookDataSpecificationsBuilder;
 import com.oracle.library.SearchCriteria;
 import com.oracle.library.model.BookData;
+import com.oracle.library.repository.BookDataRepository;
 
 @Service
 public class BookDataService {
@@ -22,22 +23,12 @@ public class BookDataService {
 		return bookDataRepository.findAll();
 	}
 
-	public List<BookData> test() {
-		BookDataSpecification spec1 = new BookDataSpecification(
-				new SearchCriteria("issueUsername", ":", "sampleUser"));
-		BookDataSpecification spec2 = new BookDataSpecification(
-				new SearchCriteria("lastName", ":", "doe"));
-
-		List<BookData> results = bookDataRepository.findAll(Specifications.where(spec1).and(spec2));
-		return results;
-	}
-
 	public List<BookData> findWithSearch(List<SearchCriteria> params) {
 		BookDataSpecificationsBuilder builder = new BookDataSpecificationsBuilder();
-		params.forEach(param->{
+		params.forEach(param -> {
 			builder.with(param.getKey(), param.getOperation(), param.getValue());
 		});
-        Specification<BookData> spec = builder.build();
-        return bookDataRepository.findAll(spec);
+		Specification<BookData> specification = builder.build();
+		return bookDataRepository.findAll(specification);
 	}
 }

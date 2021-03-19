@@ -7,8 +7,6 @@ public class Shelf extends AbstractEntity {
 	@Column
 	private String sectionName;
 	
-	
-
 	public String getSectionName() {
 		return sectionName;
 	}

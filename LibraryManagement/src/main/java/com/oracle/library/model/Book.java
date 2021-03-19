@@ -32,7 +32,6 @@ public class Book extends AbstractEntity {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "book")
 	private List<BookCopy> copies;
 	
-	
 	@OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	private BookCategory bookCategory;
 	

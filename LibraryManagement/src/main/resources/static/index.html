@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="script.js?104"></script>
+  
+  <style>
+    body {background-color: #ddd9d9;}
+ .loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+ }
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hide-loader{
+display:none;
+}
+  </style>
+  </style>
+  <title>Library Management System</title>
+</head>
+
+<body>
+  <br>
+  <div>
+ <center><u>
+        <h2>Library Management System</h2><br>
+      </u></center>
+    <table align="center" width="800">
+      <tr>
+        <td>
+          <form>
+            <div class="form-group">
+              Search Book<br>
+              <input class="form-control" required type="text" size=80% id="search" name="search"placeholder="Eg., Harry Potter"><br>
+            <details>
+              <summary>Advanced Search</summary>
+              <p>
+                <br>
+                Author(s)
+              <input class="form-control" type="text" size=80% id="authors" name="authors" placeholder="Eg., Lewis Caroll">
+              <br>
+              Genre / Category<br>
+              <input class="form-control" type="text" size=80% id="category" name="category"placeholder="Eg., Fiction"><br>
+              </details>
+            </br>
+              <button type="button" class="btn btn-success" name="button" onclick="mainfunc()">Search Books</button>
+              <button type="button" class="btn btn-warning" name="buttons" onclick="resetformData()">RESET</button>
+              <img id="loader" src="loader.gif" style="display:none;height:30px;margin-left: 30px">
+              <br>
+              <h4 style="display: none; margin-top: 30px;" id="tb1">Final Query</h4>
+              <textarea readonly class="form-control" style="display: none;" id="final_query" name="final_query" rows="2" cols="85"></textarea>
+              <br>
+              <h4 style="display: none;" id="tb2">Response Time</h4>
+              <textarea readonly class="form-control" style="display: none;" id="time" name="time" rows="1" cols="10"></textarea>
+              <br>
+              <h4 style="display: none;" id="tb3">Results</h4>
+              <textarea readonly class="form-control" style="display: none;" id="result" name="result" rows="25" cols="85"></textarea>
+            </div>
+            <div id="clearnow">
+            <table class="table table-borderless table-dark" align = "center" id="table" border="1"> 
+            </table> 
+          </div>
+          <div id="clearnow">
+            <table class="table table-sm table-dark" align = "center" id="detailtable" border="1"> 
+            </table> 
+          </div>
+            <!-- Trigger/Open The Modal -->
+<!-- <button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div> -->
+          </div>
+        </td>
+      </tr>
+    </table>
+    </form>
+  </div> 
+</body>
+
+</html>
+
